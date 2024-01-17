@@ -38,7 +38,7 @@
       v-model="isOpen"
       :ui="{
         strategy: 'override',
-        base: 'sm:max-w-4xl',
+        base: 'sm:max-w-5xl',
         overlay: {
           background: 'bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-lg',
         },
@@ -65,12 +65,7 @@
 
 <script reactive>
 const isConnected = true;
-
 const isOpen = useModal();
-
-const handleOpenModal = () => {
-  console.log("open modal");
-};
 
 export default {
   data() {
