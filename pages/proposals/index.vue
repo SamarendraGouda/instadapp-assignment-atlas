@@ -38,7 +38,7 @@
       v-model="isOpen"
       :ui="{
         strategy: 'override',
-        base: 'sm:max-w-5xl w-5xl',
+        width: 'sm:max-w-4xl',
         overlay: {
           background: 'bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-lg',
         },
