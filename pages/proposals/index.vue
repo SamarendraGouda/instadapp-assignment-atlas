@@ -64,7 +64,7 @@
 </template>
 
 <script reactive>
-const isConnected = false;
+const isConnected = true;
 
 const isOpen = useModal();
 
