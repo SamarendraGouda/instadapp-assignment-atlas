@@ -63,18 +63,9 @@
   </div>
 </template>
 
-<script reactive>
+<script setup>
 const isConnected = true;
 const isOpen = useModal();
-
-export default {
-  data() {
-    return {
-      isOpen,
-      isConnected,
-    };
-  },
-};
 </script>
 
 <style scoped>

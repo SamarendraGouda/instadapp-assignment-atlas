@@ -21,9 +21,8 @@ CreateProposalDescription } from '#build/components';
   </div>
 </template>
 
-<script reactive>
+<script setup>
 const selectedTab = useTabs();
-console.log(selectedTab.value);
 
 const tabs = [
   {
@@ -43,15 +42,6 @@ const tabs = [
     value: "summary",
   },
 ];
-
-export default {
-  data() {
-    return {
-      selectedTab,
-      tabs,
-    };
-  },
-};
 </script>
 
 <style scoped>
