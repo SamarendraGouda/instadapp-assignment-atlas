@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="right-container">
-      <div class="for-button">
+      <div class="for-button" @click="isVoteModalOpen = true">
         <img src="~/assets/icons/for.svg" alt="" />
         <div class="for-text">Vote For</div>
       </div>
@@ -79,11 +79,24 @@
       </div>
       <div class="abstain-button">Abstain</div>
     </div>
+    <UModal
+      v-model="isVoteModalOpen"
+      :ui="{
+        strategy: 'override',
+        width: 'sm:max-w-4xl',
+        overlay: {
+          background: 'bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-lg',
+        },
+      }"
+    >
+      <ModalsVoteConfirmContent @close="isVoteModalOpen = false" />
+    </UModal>
   </div>
 </template>
 
 <script setup>
 const linkCount = [1, 2, 3];
+const isVoteModalOpen = useVoteModal();
 </script>
 
 <style scoped>

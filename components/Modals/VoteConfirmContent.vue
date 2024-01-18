@@ -13,7 +13,7 @@ import type { ReusablesVotingStatusFor } from '#build/components';
       </div>
       <div class="button-group">
         <button class="button-group-confirm">Confirm</button>
-        <button class="button-group-cancel" @click="isOpen = false">
+        <button class="button-group-cancel" @click="isVoteModalOpen = false">
           Cancel
         </button>
       </div>
@@ -22,7 +22,8 @@ import type { ReusablesVotingStatusFor } from '#build/components';
 </template>
 
 <script setup>
-const isOpen = useModal();
+import { defineProps, reactive } from "vue";
+const isVoteModalOpen = useVoteModal();
 </script>
 
 <style scoped>

@@ -1,5 +1,6 @@
-import type { UButton } from '#build/components'; import type { UTabs } from
-'#build/components';
+import type { ModalsTransactionBuilder } from '#build/components'; import type {
+UModal } from '#build/components'; import type { UButton } from
+'#build/components'; import type { UTabs } from '#build/components';
 <template>
   <div class="code-container">
     <div class="header">
@@ -7,6 +8,7 @@ import type { UButton } from '#build/components'; import type { UTabs } from
       <UButton
         color="white"
         label="Batch Tx"
+        @click="isTransactionBuilderOpen = true"
         :ui="{
           strategy: 'override',
           base: 'dark:bg-opacity-0 dark:ring-opacity-1 h-10 dark:hover:bg-opacity-0',
@@ -117,10 +119,14 @@ import type { UButton } from '#build/components'; import type { UTabs } from
         </UButton>
       </div>
     </div>
+    <UModal v-model="isTransactionBuilderOpen">
+      <ModalsTransactionBuilder @close="isTransactionBuilderOpen = false" />
+    </UModal>
   </div>
 </template>
 
 <script setup>
+const isTransactionBuilderOpen = useTxBuilderModal();
 const tabItems = [
   {
     label: "Expand",

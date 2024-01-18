@@ -48,18 +48,6 @@
         <ProposalsProposalModalContent @close="isOpen = false" />
       </div>
     </UModal>
-    <!-- <UModal
-      v-model="isOpen"
-      :ui="{
-        strategy: 'override',
-        base: 'sm:max-w-l',
-        overlay: {
-          background: 'bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-lg',
-        },
-      }"
-    >
-      <ModalsTransactionBuilder @close="isOpen = false" />
-    </UModal> -->
   </div>
 </template>
 
