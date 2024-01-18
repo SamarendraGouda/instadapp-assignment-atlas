@@ -119,7 +119,15 @@ UModal } from '#build/components'; import type { UButton } from
         </UButton>
       </div>
     </div>
-    <UModal v-model="isTransactionBuilderOpen">
+    <UModal
+      v-model="isTransactionBuilderOpen"
+      :ui="{
+        strategy: 'override',
+        overlay: {
+          background: 'bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-lg',
+        },
+      }"
+    >
       <ModalsTransactionBuilder @close="isTransactionBuilderOpen = false" />
     </UModal>
   </div>
