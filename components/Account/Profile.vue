@@ -7,6 +7,7 @@ ReusablesMidOutlineButton } from '#build/components';
       <ReusablesMidButton
         label="Delegate to this Account"
         :icon="delegateIcon"
+        @click="isOpen = true"
       />
       <ReusablesMidOutlineButton
         label="Share this
@@ -14,12 +15,24 @@ Voting Profile"
         :icon="shareIcon"
       />
     </div>
+    <UModal
+      v-model="isOpen"
+      :ui="{
+        overlay: {
+          background: 'bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-lg',
+        },
+      }"
+    >
+      <ModalsDelegate @close="isOpen = false" />
+    </UModal>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import shareIcon from "~/assets/icons/share.svg";
 import delegateIcon from "~/assets/icons/delegate.svg";
+
+const isOpen = useDelegateModal();
 </script>
 
 <style scoped>

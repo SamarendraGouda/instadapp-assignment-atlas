@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <button class="button-group-button">
-      <img v-if="icon" :src="icon" alt="" />
-      {{ label }}
-    </button>
-  </div>
+  <button class="button-group-button">
+    <img v-if="icon" :src="icon" alt="" />
+    {{ label }}
+  </button>
 </template>
 
 <script reactive lang="ts">

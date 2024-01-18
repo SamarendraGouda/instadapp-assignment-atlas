@@ -4,3 +4,5 @@ export const useWallet = () => useState<any>("wallet", () => null);
 export const useVoteModal = () => useState<boolean>("voteModal", () => false);
 export const useTxBuilderModal = () =>
   useState<boolean>("txBuilderModal", () => false);
+export const useDelegateModal = () =>
+  useState<boolean>("delegateModal", () => false);
