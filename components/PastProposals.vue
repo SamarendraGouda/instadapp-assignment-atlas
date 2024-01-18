@@ -11,9 +11,11 @@
           <p class="value failed">20</p>
           | Failed
         </div>
-        <button class="btn-see-all">
-          See All <img :src="buttonNext" alt="" />
-        </button>
+        <NuxtLink to="/proposals">
+          <button class="btn-see-all">
+            See All <img :src="buttonNext" alt="" />
+          </button>
+        </NuxtLink>
       </div>
     </div>
     <!-- <PastProposalTable /> -->
@@ -25,15 +27,30 @@
         <div class="column-item abstain">Abstain</div>
         <div class="column-item status">Status</div>
       </div>
-      <ProposalsPastCard />
-      <ProposalsPastCard />
-      <ProposalsPastCard />
+      <ProposalsPastCard @click="isOpen = true" />
+      <ProposalsPastCard @click="isOpen = true" />
+      <ProposalsPastCard @click="isOpen = true" />
     </div>
+    <UModal
+      v-model="isOpen"
+      :ui="{
+        strategy: 'override',
+        width: 'sm:max-w-4xl',
+        overlay: {
+          background: 'bg-gray-200/75 dark:bg-gray-800/75 backdrop-blur-lg',
+        },
+      }"
+    >
+      <div>
+        <ProposalsProposalModalContent @close="isOpen = false" />
+      </div>
+    </UModal>
   </div>
 </template>
 
 <script setup lang="ts">
 import buttonNext from "~/assets/icons/button-next.svg";
+const isOpen = useModal();
 </script>
 
 <style scoped>
