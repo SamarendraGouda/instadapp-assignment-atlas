@@ -41,14 +41,16 @@ ReusablesCodeExecItem } from '#build/components';
         <div class="tx-buttons">
           <div class="copy"><img :src="copy" />Copy RAW Tx data</div>
           <UButton
-            color="white"
+            color="primary"
             :ui="{
               strategy: 'override',
-              base: 'bg-primary dark:bg-opacity-0 dark:ring-opacity-1 h-10 dark:hover:bg-opacity-0',
-              font: 'font-semibold',
+              base: 'dark:ring-opacity-1 h-10 dark:hover:bg-opacity-0',
             }"
           >
-            <span>Simulate</span>
+            <span style="color: white; font-size: 12px; font-weight: 600"
+              >Simulate</span
+            >
+            <img src="~/assets/icons/next.svg" alt="" />
           </UButton>
         </div>
       </div>
@@ -73,14 +75,15 @@ ReusablesCodeExecItem } from '#build/components';
         <span>Back</span>
       </UButton>
       <UButton
-        color="white"
+        color="primary"
         :ui="{
           strategy: 'override',
-          base: 'dark:bg-opacity-0 dark:ring-opacity-1 h-10 dark:hover:bg-opacity-0',
-          font: 'font-bold',
+          base: 'dark:ring-opacity-1 h-10 dark:hover:bg-opacity-0',
         }"
       >
-        <span>Submit</span>
+        <span style="color: white; font-size: 12px; font-weight: 600"
+          >Submit</span
+        >
         <img src="~/assets/icons/next.svg" alt="" />
       </UButton>
     </div>

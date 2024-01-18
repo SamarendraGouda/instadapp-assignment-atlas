@@ -1,4 +1,5 @@
-import type { CreateProposalLinks } from '#build/components'; import type {
+import type { IconsDocument } from '#build/components'; import type {
+CreateProposalLinks } from '#build/components'; import type {
 CreateProposalDescription } from '#build/components';
 <template>
   <div class="step-form-container">
@@ -9,6 +10,24 @@ CreateProposalDescription } from '#build/components';
         :class="selectedTab === tab.value ? 'selected-tab' : 'tab'"
         @click="selectedTab = tab.value"
       >
+        <div class="icon">
+          <IconsDocument
+            :color="selectedTab === 'description' ? '#3F75FF' : 'white'"
+            v-if="tab.value === 'description'"
+          />
+          <IconsCode
+            :color="selectedTab === 'code' ? '#3F75FF' : 'white'"
+            v-else-if="tab.value === 'code'"
+          />
+          <IconsLink
+            :color="selectedTab === 'links' ? '#3F75FF' : 'white'"
+            v-else-if="tab.value === 'links'"
+          />
+          <IconsSummary
+            :color="selectedTab === 'summary' ? '#3F75FF' : 'white'"
+            v-else-if="tab.value === 'summary'"
+          />
+        </div>
         {{ tab.label }}
       </div>
     </div>
@@ -62,7 +81,7 @@ const tabs = [
 }
 
 .tabs-container {
-  width: 446px;
+  width: auto;
   height: 56px;
   padding: 0 8px;
   background: #17243f;
@@ -71,6 +90,7 @@ const tabs = [
   justify-content: space-between;
   align-items: center;
   border-radius: 15px;
+  gap: 8px;
 }
 
 .tab {
@@ -84,6 +104,7 @@ const tabs = [
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 6px;
 }
 
 .tab:hover {
@@ -103,6 +124,7 @@ const tabs = [
   justify-content: center;
   align-items: center;
   background: #1d2c4b;
+  gap: 6px;
 }
 
 .form-container {

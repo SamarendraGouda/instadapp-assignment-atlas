@@ -49,14 +49,15 @@
         <span>Back</span>
       </UButton>
       <UButton
-        color="white"
+        color="primary"
         :ui="{
           strategy: 'override',
-          base: 'dark:bg-opacity-0 dark:ring-opacity-1 h-10 dark:hover:bg-opacity-0',
-          font: 'font-bold',
+          base: 'dark:ring-opacity-1 h-10 dark:hover:bg-opacity-0',
         }"
       >
-        <span>Next Step</span>
+        <span style="color: white; font-size: 12px; font-weight: 600"
+          >Next Step</span
+        >
         <img src="~/assets/icons/next.svg" alt="" />
       </UButton>
     </div>

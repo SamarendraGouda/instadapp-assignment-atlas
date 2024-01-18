@@ -7,20 +7,27 @@
     <div class="bottom-container">
       <div class="header">
         <div class="title">Proposals</div>
-        <UInput
-          icon="i-heroicons-magnifying-glass-20-solid"
-          size="sm"
-          color="white"
-          :trailing="false"
-          placeholder="Search..."
-          :ui="{
-            strategy: 'override',
-            base: 'bg-opacity-0 dark:bg-opacity-0',
-            variant: {
-              outline: 'bg-opacity-0',
-            },
-          }"
-        />
+        <div class="button-group">
+          <UInput
+            icon="i-heroicons-magnifying-glass-20-solid"
+            size="sm"
+            color="white"
+            :trailing="false"
+            placeholder="Search..."
+            :ui="{
+              strategy: 'override',
+              base: 'bg-opacity-0 dark:bg-opacity-0',
+              variant: {
+                outline: 'bg-opacity-0',
+              },
+            }"
+          />
+          <div>
+            <NuxtLink to="/create-proposal">
+              <ReusablesMidButton label="+ Create Proposal" />
+            </NuxtLink>
+          </div>
+        </div>
       </div>
       <div class="proposals-container">
         <div class="proposals-column">
@@ -94,7 +101,13 @@ const isOpen = useModal();
   justify-content: space-between;
   align-items: center;
 }
-
+.button-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
 .proposals-container {
   width: 100%;
   display: flex;

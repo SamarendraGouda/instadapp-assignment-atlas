@@ -9,16 +9,11 @@
     <g id="icon">
       <path
         id="Vector"
-        d="M17 3H7C5.89543 3 5 3.89543 5 5V18C5 19.1046 5.89543 20 7 20H17C18.1046 20 19 19.1046 19 18V5C19 3.89543 18.1046 3 17 3Z"
-        :stroke="color"
-        stroke-width="2"
-      />
-      <path
-        id="Vector_2"
-        d="M9 8H15M9 12H15M9 16H13"
+        d="M6 13V5.94118C6 5.49694 6 5.27482 6.146 5.13741C6.292 5 6.528 5 7 5H19L15 9L19 13H6ZM6 13V21"
         :stroke="color"
         stroke-width="2"
         stroke-linecap="round"
+        stroke-linejoin="round"
       />
     </g>
   </svg>
@@ -36,3 +31,4 @@ export default defineComponent({
   },
 });
 </script>
+
